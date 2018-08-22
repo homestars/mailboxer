@@ -12,6 +12,7 @@ class Mailboxer::Message < Mailboxer::Notification
   }
 
   mount_uploader :attachment, AttachmentUploader
+  process_in_background :attachment
 
   class << self
     #Sets the on deliver callback method.
